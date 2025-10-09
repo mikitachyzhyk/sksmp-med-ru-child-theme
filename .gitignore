@@ -1,0 +1,10 @@
+/**/node_modules/
+/dist/
+/psd/
+/**/*.psd
+/**/*.mp4
+/**/Thumbs.db
+/**/.DS_Store
+/**/*cache
+sublime-gulp.log
+/token.txt
