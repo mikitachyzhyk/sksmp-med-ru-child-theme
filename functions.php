@@ -51,3 +51,14 @@ function enqueueScriptWithFileMTime(
 add_action('wp_enqueue_scripts', function () {
   enqueueScriptWithFileMTime('lekar-child-script', 'script.js', [], true);
 });
+
+/**
+ * Format numbered phone.
+ *
+ * @param int $phone Phone number.
+ * @return string
+ */
+function formatPhone($phone)
+{
+  return preg_replace('/(?:\G|^)[+\d]*\K[^:+\d]/m', '', $phone);
+}

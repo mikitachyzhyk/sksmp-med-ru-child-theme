@@ -33,4 +33,48 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target.closest('.js-header-burger') && e.defaultPrevented) return
     closeHeaderMenu()
   })
+
+  // Mobile menu
+  const menuItems = document.querySelectorAll(
+    '.lch-header__nav > li.menu-item-has-children'
+  )
+
+  menuItems.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      // e.preventDefault()
+      item.classList.toggle('active')
+    })
+  })
+
+  // Search toggle
+  const searchToggle = document.querySelector('.lch-header__search-toggle')
+  const searchForm = document.querySelector('.lch-header__search-form')
+  const searchInput = document.querySelector(
+    '.lch-header__search-form .search-form input[type="search"]'
+  )
+
+  if (searchToggle && searchForm) {
+    searchToggle.addEventListener('click', () => {
+      searchForm.classList.toggle('active')
+      searchInput.focus()
+    })
+  }
+
+  document.addEventListener('click', (e) => {
+    if (
+      e.target.closest('.lch-header__search-form') &&
+      !e.target.closest(
+        '.lch-header__search-form .search-form input[type="search"]'
+      )
+    ) {
+      searchForm.classList.remove('active')
+    }
+  })
+
+  // close on esc
+  document.addEventListener('keyup', (e) => {
+    if (e.key === 'Escape') {
+      searchForm.classList.remove('active')
+    }
+  })
 })
