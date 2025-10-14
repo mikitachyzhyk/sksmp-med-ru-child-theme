@@ -27,10 +27,6 @@ function enqueueStyleWithFileMTime(
   wp_enqueue_style($handle, $uri, $deps, $ver, $media);
 }
 
-add_action('wp_enqueue_scripts', function () {
-  enqueueStyleWithFileMTime('lekar-child-style', 'style.css');
-});
-
 /**
  * Enqueues a script with file modification time as $ver.
  *
@@ -47,8 +43,8 @@ function enqueueScriptWithFileMTime(
   wp_enqueue_script($handle, $uri, $deps, $ver, $args);
 }
 
-// Подключаем script.js
 add_action('wp_enqueue_scripts', function () {
+  enqueueStyleWithFileMTime('lekar-child-style', 'style.css');
   enqueueScriptWithFileMTime('lekar-child-script', 'script.js', [], true);
 });
 

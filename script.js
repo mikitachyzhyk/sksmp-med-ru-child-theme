@@ -34,6 +34,23 @@ document.addEventListener('DOMContentLoaded', () => {
     closeHeaderMenu()
   })
 
+  // sticky header
+  const header = document.querySelector('.lch-header')
+
+  function stickyHeader() {
+    if (window.scrollY > 0) {
+      header.classList.add('sticky')
+    } else {
+      header.classList.remove('sticky')
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    stickyHeader()
+  })
+
+  stickyHeader()
+
   // Mobile menu
   const menuItems = document.querySelectorAll(
     '.lch-header__nav > li.menu-item-has-children'
