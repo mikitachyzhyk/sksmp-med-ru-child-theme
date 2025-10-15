@@ -1,5 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
   /**
+   * Input mask
+   *
+   * https://imask.js.org/
+   */
+
+  const telInputs = document.querySelectorAll('[type="tel"]')
+
+  var maskOptions = {
+    mask: '+{7} 000 000-00-00',
+  }
+
+  telInputs.forEach((input) => {
+    const imask = IMask(input, maskOptions)
+
+    // https://github.com/uNmAnNeR/imaskjs/issues/152#issuecomment-462054778
+    input.addEventListener(
+      'focus',
+      function () {
+        imask.updateOptions({ lazy: false })
+      },
+      true
+    )
+    input.addEventListener(
+      'blur',
+      function () {
+        imask.updateOptions({ lazy: true })
+      },
+      true
+    )
+  })
+
+  /**
    * Header
    */
 
@@ -93,5 +125,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') {
       searchForm.classList.remove('active')
     }
+  })
+
+  /**
+   * Contact Form 7 float notification
+   */
+
+  const cf7notifications = document.querySelectorAll(
+    '.cf7-float-notifications .wpcf7-response-output'
+  )
+
+  cf7notifications.forEach((notification) => {
+    notification.addEventListener('click', () => {
+      const cf7form = notification.closest('.wpcf7-form')
+      if (!cf7form) return
+
+      notification.classList.add('cf7-notification-hidden')
+      cf7form.addEventListener('submit', () => {
+        notification.classList.remove('cf7-notification-hidden')
+      })
+    })
   })
 })

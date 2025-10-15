@@ -45,7 +45,8 @@ function enqueueScriptWithFileMTime(
 
 add_action('wp_enqueue_scripts', function () {
   enqueueStyleWithFileMTime('lekar-child-style', 'style.css');
-  enqueueScriptWithFileMTime('lekar-child-script', 'script.js', [], true);
+  wp_enqueue_script('lekar-child-imask-js', get_stylesheet_directory_uri() . '/assets/js/imask.js', array(), '7.6.1', true);
+  enqueueScriptWithFileMTime('lekar-child-script', 'script.js', ['lekar-child-imask-js'], true);
 });
 
 /**
@@ -58,3 +59,9 @@ function formatPhone($phone)
 {
   return preg_replace('/(?:\G|^)[+\d]*\K[^:+\d]/m', '', $phone);
 }
+
+/**
+ * Remove <p> and <br/> from Contact Form 7.
+ */
+
+add_filter('wpcf7_autop_or_not', '__return_false');
