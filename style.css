@@ -422,7 +422,6 @@ body.home .lch-header.sticky .lch-header__container {
 /* Footer */
 
 .lch-footer {
-  margin-top: 40px;
   padding: 40px 20px 80px;
   background: #17181e;
   color: white;
@@ -758,7 +757,8 @@ body.home .lch-header.sticky .lch-header__container {
 .help-form .wpcf7 .form-container .wpcf7-form-control-wrap input::placeholder {
   color: rgba(255, 255, 255, 0.502);
 }
-.help-form .wpcf7 .wpcf7-submit {
+.help-form .wpcf7 .wpcf7-submit,
+.question-form .wpcf7 .wpcf7-submit {
   padding: 20px 36px;
   font-family: 'Roboto VF', sans-serif !important;
   font-weight: 700 !important;
@@ -766,12 +766,15 @@ body.home .lch-header.sticky .lch-header__container {
   color: #02028a;
   background: white;
   border-radius: 100px;
+  box-shadow: none !important;
 }
-.help-form .wpcf7 .wpcf7-submit:disabled {
+.help-form .wpcf7 .wpcf7-submit:disabled,
+.question-form .wpcf7 .wpcf7-submit:disabled {
   opacity: 0.5;
   pointer-events: none;
 }
-.help-form .wpcf7 .wpcf7-submit:hover {
+.help-form .wpcf7 .wpcf7-submit:hover,
+.question-form .wpcf7 .wpcf7-submit:hover {
   color: #000;
   box-shadow: 2px 2px 20px 0px rgba(53, 53, 62, 0.122);
   opacity: 1;
@@ -782,21 +785,25 @@ body.home .lch-header.sticky .lch-header__container {
   right: 0;
   margin: 0;
 }
-.help-form .wpcf7-acceptance .wpcf7-list-item {
+.help-form .wpcf7-acceptance .wpcf7-list-item,
+.question-form .wpcf7-acceptance .wpcf7-list-item {
   margin: 10px 0 0;
 }
-.help-form .wpcf7-acceptance label {
+.help-form .wpcf7-acceptance label,
+.question-form .wpcf7-acceptance label {
   display: flex;
   align-items: center;
   margin: 0;
   cursor: pointer;
 }
-.help-form .wpcf7-acceptance .wpcf7-list-item-label {
+.help-form .wpcf7-acceptance .wpcf7-list-item-label,
+.question-form .wpcf7-acceptance .wpcf7-list-item-label {
   font-size: 13px;
   line-height: 1.2;
   color: white;
 }
-.help-form .wpcf7-acceptance input {
+.help-form .wpcf7-acceptance input,
+.question-form .wpcf7-acceptance input {
   flex-shrink: 0;
   width: 20px;
   height: 20px;
@@ -804,7 +811,8 @@ body.home .lch-header.sticky .lch-header__container {
   accent-color: white;
 }
 
-.help-form
+.help-form .wpcf7 form.wpcf7-form .wpcf7-form-control-wrap .wpcf7-not-valid-tip,
+.question-form
   .wpcf7
   form.wpcf7-form
   .wpcf7-form-control-wrap
@@ -853,13 +861,15 @@ body.home .lch-header.sticky .lch-header__container {
     position: relative;
     padding-bottom: 74px;
   }
-  .help-form .wpcf7 .wpcf7-submit {
+  .help-form .wpcf7 .wpcf7-submit,
+  .question-form .wpcf7 .wpcf7-submit {
     position: absolute;
     bottom: 0;
     padding: 17px 30px;
     width: 100%;
   }
-  .help-form .wpcf7-acceptance .wpcf7-list-item-label {
+  .help-form .wpcf7-acceptance .wpcf7-list-item-label,
+  .question-form .wpcf7-acceptance .wpcf7-list-item-label {
     font-size: 12px;
   }
 }
@@ -873,6 +883,33 @@ body.home .lch-header.sticky .lch-header__container {
     border-radius: 100px;
     padding: 2px;
   }
+}
+
+@keyframes trambling-animation {
+  0%,
+  50%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40% {
+    transform: translateX(5px);
+  }
+}
+.wpcf7-not-valid,
+.wpcf7-not-valid-tip {
+  animation: 0.75s ease-in-out trambling-animation;
+}
+
+/* .wpcf7-not-valid {
+  border-color: red !important;
+} */
+.wpcf7-not-valid::placeholder {
+  color: red !important;
 }
 
 .cf7-float-notifications .wpcf7-response-output {
@@ -929,5 +966,71 @@ body.home .lch-header.sticky .lch-header__container {
   }
   .why-us-img {
     width: 100% !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .question-block {
+    padding: 30px 20px !important;
+  }
+  .question-container {
+    gap: 16px !important;
+  }
+  .question-title .elementor-heading-title {
+    font-size: 34px !important;
+  }
+  .question-subtitle {
+    font-size: 17px !important;
+  }
+}
+
+.question-form .wpcf7 {
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+.question-form .wpcf7 .wpcf7-text {
+  height: 64px;
+  margin: 0 0 12px;
+  padding: 0 20px;
+  background: none;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  color: white;
+}
+.question-form .wpcf7 .wpcf7-text::placeholder {
+  color: rgba(255, 255, 255, 0.502);
+}
+.question-form .form-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.question-form .wpcf7-acceptance .wpcf7-list-item {
+  margin: 0;
+}
+.question-form .wpcf7 .wpcf7-spinner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+}
+.question-form .wpcf7 .wpcf7-submit {
+  color: #c10100;
+}
+@media (max-width: 767.98px) {
+  .question-form .form-container {
+    margin-top: 24px;
+    gap: 8px;
+  }
+  .question-form .wpcf7 .wpcf7-submit {
+    position: static;
+  }
+}
+@media (min-width: 768px) {
+  .question-form .form-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }
