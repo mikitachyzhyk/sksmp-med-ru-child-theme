@@ -1230,3 +1230,7 @@ body.home .lch-header.sticky .lch-header__container {
 .popup__form .wpcf7 form.payment-required .wpcf7-response-output {
   background-color: #fff1cc;
 }
+
+.cookie-notice {
+  z-index: 10000000 !important;
+}
