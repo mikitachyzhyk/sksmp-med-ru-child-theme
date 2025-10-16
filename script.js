@@ -135,15 +135,199 @@ document.addEventListener('DOMContentLoaded', () => {
     '.cf7-float-notifications .wpcf7-response-output'
   )
 
-  cf7notifications.forEach((notification) => {
-    notification.addEventListener('click', () => {
-      const cf7form = notification.closest('.wpcf7-form')
-      if (!cf7form) return
-
+  document.addEventListener('click', () => {
+    cf7notifications.forEach((notification) => {
       notification.classList.add('cf7-notification-hidden')
-      cf7form.addEventListener('submit', () => {
-        notification.classList.remove('cf7-notification-hidden')
+    })
+  })
+
+  cf7notifications.forEach((notification) => {
+    const cf7form = notification.closest('.wpcf7-form')
+    if (!cf7form) return
+
+    cf7form.addEventListener('submit', () => {
+      notification.classList.remove('cf7-notification-hidden')
+
+      setTimeout(() => {
+        notification.classList.add('cf7-notification-hidden')
+      }, 5000)
+    })
+  })
+
+  /**
+   * Hide scrollbars
+   */
+
+  // function getScrollbarWidth() {
+  //   let div = document.createElement('div')
+
+  //   div.style.overflowY = 'scroll'
+  //   div.style.width = '50px'
+  //   div.style.height = '50px'
+
+  //   document.body.append(div)
+  //   let scrollbarWidth = div.offsetWidth - div.clientWidth
+
+  //   div.remove()
+
+  //   return scrollbarWidth
+  // }
+
+  // function isScrollbar() {
+  //   const bodyWidth = parseInt(getComputedStyle(document.body).width)
+  //   const windowWidth = window.innerWidth
+
+  //   return bodyWidth !== windowWidth
+  // }
+
+  // function changeBodyOverflowY(value = '', timeout = null) {
+  //   const scrollbarWidth = isScrollbar() ? getScrollbarWidth() + 'px' : ''
+
+  //   if (!timeout) change()
+  //   else setTimeout(change, timeout)
+
+  //   function change() {
+  //     document.body.style.overflowY = value
+  //     document.documentElement.style.overflowY = value
+
+  //     document.body.style.paddingRight = value ? scrollbarWidth : ''
+
+  //     // for fixed elements
+  //     // document.querySelector('.lch-header') &&
+  //     //   (document.querySelector('.lch-header').style.paddingRight = value
+  //     //     ? scrollbarWidth
+  //     //     : '')
+  //     // document.querySelector('.bazz-widget') &&
+  //     //   (document.querySelector('.bazz-widget').style.paddingRight = value
+  //     //     ? scrollbarWidth
+  //     //     : '')
+  //     // document.querySelector('#wpadminbar') &&
+  //     //   (document.querySelector('#wpadminbar').style.paddingRight = value
+  //     //     ? scrollbarWidth
+  //     //     : '')
+  //   }
+  // }
+
+  /**
+   * Popups
+   */
+
+  const popupClass = 'popup'
+
+  const isValidIdSelector = (selector) => {
+    if (selector && selector.charAt(0).match(/[a-z]/i)) return true
+    return false
+  }
+
+  const popupOpeners = document.querySelectorAll('[data-popup]')
+  let currentPopupOpener = null
+
+  const openPopup = (id, opener = null) => {
+    if (!id) return
+    id = id.replace(/#/g, '')
+    if (!isValidIdSelector(id)) return
+    const popup = document.querySelector(`#${id}`)
+    if (!popup || !popup.classList.contains(popupClass)) return
+
+    popup.classList.add('active')
+    popup.tabIndex = -1
+    popup.focus()
+    // changeBodyOverflowY('hidden')
+
+    if (opener) currentPopupOpener = opener
+  }
+
+  const closePopup = () => {
+    const popups = document.querySelectorAll('.' + popupClass)
+    popups.forEach((popup) => {
+      popup.classList.remove('active')
+    })
+
+    // changeBodyOverflowY('', 200)
+
+    if (currentPopupOpener) {
+      currentPopupOpener.focus()
+      currentPopupOpener = null
+    }
+  }
+
+  popupOpeners.forEach((opener) => {
+    opener.addEventListener('click', (e) => {
+      e.preventDefault()
+
+      const popupName = opener.dataset.popup
+      openPopup(popupName, opener)
+    })
+  })
+
+  const popupClosers = document.querySelectorAll(
+    `.${popupClass}__close, .${popupClass}__close-overlay, [data-popup-close]`
+  )
+
+  popupClosers.forEach((closer) => {
+    closer.addEventListener('click', (e) => {
+      e.preventDefault()
+
+      closePopup()
+    })
+  })
+
+  // Esc key
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closePopup()
+    }
+  })
+
+  // Encapsulates focus inside popups
+
+  document.addEventListener('keydown', (e) => {
+    const popup = e.target.closest(`.${popupClass}`)
+    if (!popup) return
+
+    let focusableElems = popup.querySelectorAll(
+      'button, [href], input:not([type="hidden"]), select, textarea, [tabindex]:not([tabindex="-1"])'
+    )
+
+    if (Element.prototype.checkVisibility) {
+      focusableElems = Array.prototype.filter.call(focusableElems, (elem) => {
+        return elem.checkVisibility()
       })
+    }
+
+    const firstFocusableElem = focusableElems[0]
+    const lastFocusableElem = focusableElems[focusableElems.length - 1]
+
+    if (e.target === firstFocusableElem && e.key == 'Tab' && e.shiftKey) {
+      lastFocusableElem.focus()
+      e.preventDefault()
+    }
+
+    if (e.target === lastFocusableElem && e.key == 'Tab' && !e.shiftKey) {
+      firstFocusableElem.focus()
+      e.preventDefault()
+    }
+  })
+
+  /**
+   * CF7 Hidden fields
+   */
+
+  const hiddenFieldsBtns = document.querySelectorAll('[data-with-hidden-field]')
+
+  hiddenFieldsBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const parent = btn.closest('[data-hidden-field-parent]')
+      if (!parent) return
+      const field = parent.querySelector('[data-hidden-field]')
+      if (!field) return
+      const fieldName = field.dataset.hiddenField
+      const popup = document.querySelector(btn.dataset.popup)
+      if (!popup) return
+      const hiddenField = popup.querySelector(`[name="${fieldName}"]`)
+      if (!hiddenField) return
+      hiddenField.value = field.textContent.trim()
     })
   })
 })

@@ -18,7 +18,7 @@
         <?php endif; ?>
 
         <?php if (get_field('footer_btn_text', 'option')) : ?>
-          <button class="lch-footer__btn">
+          <button class="lch-footer__btn" data-popup="#popup-ambulance">
             <?php echo esc_html(get_field('footer_btn_text', 'option')); ?>
           </button>
         <?php endif; ?>
@@ -112,6 +112,50 @@
     </div>
   </div>
 </footer>
+
+<div class="popup" id="popup-ambulance">
+  <div class="popup__wrap">
+    <div class="popup__body">
+      <div class="popup__inner">
+
+        <?php if (get_field('popup_ambulance_title', 'option')) : ?>
+          <div class="popup__title">
+            <?php echo esc_html(get_field('popup_ambulance_title', 'option')); ?>
+          </div>
+        <?php endif; ?>
+
+        <div class="popup__form">
+          <?php echo do_shortcode('[contact-form-7 id="6407c29"]'); ?>
+        </div>
+      </div>
+
+      <button class="popup__close" title="Закрыть"></button>
+    </div>
+    <div class="popup__close-overlay"></div>
+  </div>
+</div>
+
+<div class="popup" id="popup-order">
+  <div class="popup__wrap">
+    <div class="popup__body">
+      <div class="popup__inner">
+
+        <?php if (get_field('popup_order_title', 'option')) : ?>
+          <div class="popup__title">
+            <?php echo esc_html(get_field('popup_order_title', 'option')); ?>
+          </div>
+        <?php endif; ?>
+
+        <div class="popup__form">
+          <?php echo do_shortcode('[contact-form-7 id="3af793e"]'); ?>
+        </div>
+      </div>
+
+      <button class="popup__close" title="Закрыть"></button>
+    </div>
+    <div class="popup__close-overlay"></div>
+  </div>
+</div>
 
 <?php wp_footer(); ?>
 
