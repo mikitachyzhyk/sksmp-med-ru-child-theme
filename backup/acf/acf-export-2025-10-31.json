@@ -1,0 +1,676 @@
+[
+    {
+        "key": "group_68e7c86d25e90",
+        "title": "Группа полей для Шапки и Подвала",
+        "fields": [
+            {
+                "key": "field_68f0dc0375fe5",
+                "label": "Общие",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_68e7c86d272cc",
+                "label": "Логотип в шапке и подвале",
+                "name": "site_logo",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "allow_in_bindings": 0,
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_68f0db6852b24",
+                "label": "Шапка",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_68e7c8a8272cd",
+                "label": "Текст возле логотипа в шапке",
+                "name": "header_logo_text",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68e7c8d7272ce",
+                "label": "Телефон в шапке",
+                "name": "header_phone",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68f0db7e52b25",
+                "label": "Подвал",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_68e90ec8d5b99",
+                "label": "Текст возле логотипа в подвале",
+                "name": "footer_logo_text",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68e90f4185d72",
+                "label": "Текст кнопки вызова скорой",
+                "name": "footer_btn_text",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68e90ee8d5b9a",
+                "label": "Текст заголовка над меню",
+                "name": "footer_nav_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68e90f10d5b9b",
+                "label": "Телефон в подвале",
+                "name": "footer_phone",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68e90f81b5f53",
+                "label": "Соцсети в подвале",
+                "name": "footer_socials",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_68e90fd1b5f54",
+                        "label": "Кнопка №1",
+                        "name": "btn_1",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_68e9100eb5f55",
+                                "label": "Текст",
+                                "name": "text",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_68e9101db5f56",
+                                "label": "Изображение",
+                                "name": "img",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "array",
+                                "library": "all",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": "",
+                                "allow_in_bindings": 0,
+                                "preview_size": "medium"
+                            },
+                            {
+                                "key": "field_68e9158356668",
+                                "label": "Ссылка",
+                                "name": "link",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_68e914e55d996",
+                                "label": "Цвет",
+                                "name": "color",
+                                "aria-label": "",
+                                "type": "color_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "#808080",
+                                "enable_opacity": 0,
+                                "return_format": "",
+                                "allow_in_bindings": 0
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_68e9159aeb911",
+                        "label": "Кнопка №2",
+                        "name": "btn_2",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_68e9159aeb912",
+                                "label": "Текст",
+                                "name": "text",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_68e9159aeb913",
+                                "label": "Изображение",
+                                "name": "img",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "array",
+                                "library": "all",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": "",
+                                "allow_in_bindings": 0,
+                                "preview_size": "medium"
+                            },
+                            {
+                                "key": "field_68e9159aeb914",
+                                "label": "Ссылка",
+                                "name": "link",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_68e9159aeb915",
+                                "label": "Цвет",
+                                "name": "color",
+                                "aria-label": "",
+                                "type": "color_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "#808080",
+                                "enable_opacity": 0,
+                                "return_format": "string",
+                                "allow_in_bindings": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_68e91105c3feb",
+                "label": "Контакты в подвале",
+                "name": "footer_contacts",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Добавить",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_68e9113bc3fec",
+                        "label": "Заголовок",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_68e91105c3feb"
+                    },
+                    {
+                        "key": "field_68e9114fc3fed",
+                        "label": "Текст",
+                        "name": "text",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_68e91105c3feb"
+                    }
+                ]
+            },
+            {
+                "key": "field_68e9115fc3fee",
+                "label": "Ссылка на политика конфиденциальности",
+                "name": "footer_policy",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68e9117dc3fef",
+                "label": "Авторские права",
+                "name": "footer_copy",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68f0db8d52b26",
+                "label": "Всплывающие окна",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_68f0db9c52b27",
+                "label": "Заголовок вызова скорой помощи",
+                "name": "popup_ambulance_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6904b573dd5e1",
+                "label": "Заголовок вызова реанимации",
+                "name": "popup_reanimation_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68f0dbbd52b28",
+                "label": "Заголовок заказа услуги",
+                "name": "popup_order_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "header-footer-options"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "ui_options_page_68e7c81e9216c",
+        "title": "Настройки сайта",
+        "active": true,
+        "menu_order": 0,
+        "page_title": "Настройки сайта",
+        "menu_slug": "header-footer-options",
+        "parent_slug": "none",
+        "advanced_configuration": 1,
+        "icon_url": "",
+        "menu_title": "",
+        "position": 50,
+        "redirect": 0,
+        "description": "",
+        "menu_icon": {
+            "type": "dashicons",
+            "value": "dashicons-admin-generic"
+        },
+        "update_button": "Обновить",
+        "updated_message": "Настройки были обновлены",
+        "capability": "edit_posts",
+        "data_storage": "options",
+        "post_id": "",
+        "autoload": 0
+    }
+]

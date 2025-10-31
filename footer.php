@@ -135,6 +135,28 @@
   </div>
 </div>
 
+<div class="popup" id="popup-reanimation">
+  <div class="popup__wrap">
+    <div class="popup__body">
+      <div class="popup__inner">
+
+        <?php if (get_field('popup_reanimation_title', 'option')) : ?>
+          <div class="popup__title">
+            <?php echo esc_html(get_field('popup_reanimation_title', 'option')); ?>
+          </div>
+        <?php endif; ?>
+
+        <div class="popup__form">
+          <?php echo do_shortcode('[contact-form-7 id="211afca"]'); ?>
+        </div>
+      </div>
+
+      <button class="popup__close" title="Закрыть"></button>
+    </div>
+    <div class="popup__close-overlay"></div>
+  </div>
+</div>
+
 <div class="popup" id="popup-order">
   <div class="popup__wrap">
     <div class="popup__body">
