@@ -35,7 +35,8 @@ body {
   padding-top: 113px;
 }
 
-body.home {
+body.home,
+body.page-template-service {
   padding-top: 0;
 }
 
@@ -60,7 +61,12 @@ body.home .lch-header {
   background: none;
 }
 
-body.home .lch-header.sticky::after {
+body.page-template-service .lch-header {
+  background: rgba(31, 31, 31, 0.502);
+}
+
+body.home .lch-header.sticky::after,
+body.page-template-service .lch-header.sticky::after {
   content: '';
   position: absolute;
   left: 0;
@@ -70,7 +76,8 @@ body.home .lch-header.sticky::after {
   background: rgba(32, 32, 32, 0.54);
   backdrop-filter: blur(15px);
 }
-body.home .lch-header.sticky .lch-header__container {
+body.home .lch-header.sticky .lch-header__container,
+body.page-template-service .lch-header.sticky .lch-header__container {
   position: relative;
   z-index: 1;
 }
@@ -651,38 +658,35 @@ body.home .lch-header.sticky .lch-header__container {
 /* Custom classes for Elementor */
 
 @media (max-width: 767.98px) {
-  .elementor-2919 .section-padding .e-con-inner {
+  .elementor .section-padding .e-con-inner {
     padding-top: 40px;
     padding-bottom: 40px;
   }
 }
 @media (min-width: 580px) {
-  .elementor-2919 .service-item {
+  .elementor .service-item {
     min-width: 560px;
   }
 }
-.elementor-2919
-  .elementor-element-46b17f2
-  .elementor-element
-  .elementor-button {
+.elementor .elementor-element-46b17f2 .elementor-element .elementor-button {
   min-width: 148px;
 }
-.elementor-2919 .service-item .service-item-bottom {
+.elementor .service-item .service-item-bottom {
   margin-top: auto;
 }
 @media (max-width: 767.98px) {
-  .elementor-2919 .elementor-element.service-item .elementor-heading-title {
+  .elementor .elementor-element.service-item .elementor-heading-title {
     font-size: 23px;
   }
-  .elementor-2919 .service-item {
+  .elementor .service-item {
     padding: 30px 20px;
     gap: 32px;
   }
-  .elementor-2919 .service-item .service-item-bottom {
+  .elementor .service-item .service-item-bottom {
     flex-direction: column;
     align-items: stretch;
   }
-  .elementor-2919 .service-item .service-item-bottom .elementor-button {
+  .elementor .service-item .service-item-bottom .elementor-button {
     width: 100%;
   }
 }
@@ -701,22 +705,22 @@ body.home .lch-header.sticky .lch-header__container {
 }
 
 @media (min-width: 388px) {
-  .elementor-2919 .med-service-item {
+  .elementor .med-service-item {
     min-width: 366px;
     max-width: 366px;
   }
 }
 @media (max-width: 767.98px) {
-  .elementor-2919 .elementor-element.med-service-item .elementor-heading-title {
+  .elementor .elementor-element.med-service-item .elementor-heading-title {
     font-size: 23px !important;
   }
-  .elementor-2919 .med-service-item {
+  .elementor .med-service-item {
     padding: 30px 20px;
   }
 }
 
 @media (min-width: 400px) {
-  .elementor-2919 .equipment-item {
+  .elementor .equipment-item {
     min-width: 270px;
     max-width: 270px;
   }
@@ -800,6 +804,15 @@ body.home .lch-header.sticky .lch-header__container {
   align-items: center;
   margin: 0;
   cursor: pointer;
+}
+.help-form .wpcf7-acceptance label a,
+.question-form .wpcf7-acceptance label a {
+  color: white;
+  text-decoration: underline;
+}
+.help-form .wpcf7-acceptance label a:hover,
+.question-form .wpcf7-acceptance label a:hover {
+  text-decoration: none;
 }
 .help-form .wpcf7-acceptance .wpcf7-list-item-label,
 .question-form .wpcf7-acceptance .wpcf7-list-item-label,
@@ -1233,4 +1246,43 @@ body.home .lch-header.sticky .lch-header__container {
 
 .cookie-notice {
   z-index: 10000000 !important;
+}
+
+.backdrop-filter-blur-15 {
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+}
+
+.margin-right-auto {
+  margin-right: auto;
+}
+
+.custom-ul ul {
+  padding: 0 0 0 15px;
+}
+.custom-ul ul li::marker {
+  color: #0000ba;
+}
+.custom-ul ul li:not(:last-child) {
+  margin-bottom: 15px;
+}
+@media (max-width: 767.98px) {
+  .custom-ul ul li {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-image {
+    max-width: none !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    aspect-ratio: 653 / 658;
+  }
+  .custom-image img {
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
