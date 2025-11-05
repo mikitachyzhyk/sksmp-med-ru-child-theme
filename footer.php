@@ -113,49 +113,27 @@
   </div>
 </footer>
 
-<div class="popup" id="popup-ambulance">
-  <div class="popup__wrap">
-    <div class="popup__body">
-      <div class="popup__inner">
+<?php if (get_field('popup_hero_title')) : ?>
+  <div class="popup" id="popup-hero">
+    <div class="popup__wrap">
+      <div class="popup__body">
+        <div class="popup__inner">
 
-        <?php if (get_field('popup_ambulance_title', 'option')) : ?>
           <div class="popup__title">
-            <?php echo esc_html(get_field('popup_ambulance_title', 'option')); ?>
+            <?php echo esc_html(get_field('popup_hero_title')); ?>
           </div>
-        <?php endif; ?>
 
-        <div class="popup__form">
-          <?php echo do_shortcode('[contact-form-7 id="6407c29"]'); ?>
-        </div>
-      </div>
-
-      <button class="popup__close" title="Закрыть"></button>
-    </div>
-    <div class="popup__close-overlay"></div>
-  </div>
-</div>
-
-<div class="popup" id="popup-reanimation">
-  <div class="popup__wrap">
-    <div class="popup__body">
-      <div class="popup__inner">
-
-        <?php if (get_field('popup_reanimation_title', 'option')) : ?>
-          <div class="popup__title">
-            <?php echo esc_html(get_field('popup_reanimation_title', 'option')); ?>
+          <div class="popup__form">
+            <?php echo do_shortcode('[contact-form-7 id="6407c29"]'); ?>
           </div>
-        <?php endif; ?>
-
-        <div class="popup__form">
-          <?php echo do_shortcode('[contact-form-7 id="211afca"]'); ?>
         </div>
-      </div>
 
-      <button class="popup__close" title="Закрыть"></button>
+        <button class="popup__close" title="Закрыть"></button>
+      </div>
+      <div class="popup__close-overlay"></div>
     </div>
-    <div class="popup__close-overlay"></div>
   </div>
-</div>
+<?php endif; ?>
 
 <div class="popup" id="popup-order">
   <div class="popup__wrap">
